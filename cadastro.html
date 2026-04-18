@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colonial Veículos - Cadastro</title>
+</head>
+<body>
+    <section>
+        <h1>Cadastro de Veículos</h1>
+        <p>Preencha os dados do veículo que deseja cadastrar.</p>
+        <form action="salvar_veiculo.php" method="post">
+            <label for="placa">Placa: </label>
+            <input type="text" id="placa" name="placa" placeholder="ABC-1234" required><br>
+            <label for="marca">Marca: </label>
+            <input type="text" id="marca" name="marca" placeholder="Ex.: Toyota" required><br>
+            <label for="modelo">Modelo: </label>
+            <input type="text" id="modelo" name="modelo" placeholder="Ex.: Corolla" required><br>
+        </form>
+    </section>
+</body>
+</html>

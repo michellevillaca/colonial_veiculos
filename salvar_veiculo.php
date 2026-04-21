@@ -15,12 +15,12 @@ $km = $_POST['km'];
 $chassi = $_POST['chassi'];
 $renavam = $_POST['renavam'];
 $cadastro = $_POST['cadastro'];
-$observacao = $_POST['obs'];
+$obs = $_POST['obs'];
 
 try {
     // 2. Preparando a query SQL de inserção
-    $sql = "INSERT INTO veiculos (placa, marca, modelo, ano_fab, ano_mod, cor, combustivel, km, chassi, renavam, cadastro, observacao) 
-            VALUES ('$placa', '$marca', '$modelo', $ano_fab, $ano_mod, '$cor', '$combustivel', $km, '$chassi', '$renavam', '$cadastro', '$observacao')";
+    $sql = "INSERT INTO veiculos (placa, marca, modelo, ano_fab, ano_mod, cor, combustivel, km, chassi, renavam, cadastro, obs) 
+            VALUES ('$placa', '$marca', '$modelo', $ano_fab, $ano_mod, '$cor', '$combustivel', $km, '$chassi', '$renavam', '$cadastro', '$obs')";
     
     // 3. Executando a query usando o objeto de conexão
     if ($conexao->query($sql) === TRUE) {

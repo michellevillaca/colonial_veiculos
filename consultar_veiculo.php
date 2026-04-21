@@ -21,9 +21,9 @@ if(isset($_GET['placa_busca'])) {
                 <p><strong>Marca:</strong> " . $veiculo['marca'] . "</p>
                 <p><strong>Modelo:</strong> " . $veiculo['modelo'] . "</p>
                 <p><strong>Cor:</strong> " . $veiculo['cor'] . "</p>
-                <p><strong>Ano Fab/Mod:</strong> " . $veiculo['ano_fab'] . "/" . $veiculo['ano_mod'] . "</p>
-                <p><strong>KM:</strong> " . $veiculo['km'] . "</p>
-                <p><strong>Obs:</strong> " . $veiculo['obs'] . "</p>
+                <p><strong>Ano Fabricação/Modelo:</strong> " . $veiculo['ano_fab'] . "/" . $veiculo['ano_mod'] . "</p>
+                <p><strong>Quilometragem:</strong> " . $veiculo['km'] . "</p>
+                <p><strong>Observações:</strong> " . $veiculo['obs'] . "</p>
                 <br>
                 <a href='cadastro.html' style='text-decoration: none; color: #3498db; font-weight: bold;'>← Nova Consulta</a>
             </div>";

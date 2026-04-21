@@ -21,15 +21,15 @@ if(isset($_GET['placa_busca'])) {
                 <p><strong>Marca:</strong> " . $veiculo['marca'] . "</p>
                 <p><strong>Modelo:</strong> " . $veiculo['modelo'] . "</p>
                 <p><strong>Cor:</strong> " . $veiculo['cor'] . "</p>
-                <p><strong>Ano Fab/Mod:</strong> " . $veiculo['ano_fabricacao'] . "/" . $veiculo['ano_modelo'] . "</p>
-                <p><strong>KM:</strong> " . $veiculo['quilometragem'] . "</p>
-                <p><strong>Obs:</strong> " . $veiculo['observacoes'] . "</p>
+                <p><strong>Ano Fab/Mod:</strong> " . $veiculo['ano_fab'] . "/" . $veiculo['ano_mod'] . "</p>
+                <p><strong>KM:</strong> " . $veiculo['km'] . "</p>
+                <p><strong>Obs:</strong> " . $veiculo['obs'] . "</p>
                 <br>
                 <a href='cadastro.html' style='text-decoration: none; color: #3498db; font-weight: bold;'>← Nova Consulta</a>
             </div>";
         } else {
             echo "<p style='text-align: center; color: #e74c3c;'>❌ Veículo com placa <strong>$placa</strong> não encontrado no estoque.</p>";
-            echo "<p style='text-align: center;'><a href='cadastro.html'>Voltar</a></p>";
+            echo "<p style='text-align: center;'><a href='consulta.html'>Voltar à página de consulta</a></p>";
         }
         
         echo "</div>";

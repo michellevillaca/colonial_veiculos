@@ -7,8 +7,8 @@ include_once("conexao.php");
 $placa = $_POST['placa'];
 $marca = $_POST['marca'];
 $modelo = $_POST['modelo'];
-$ano_fabricacao = $_POST['ano_fab'];
-$ano_modelo = $_POST['ano_mod'];
+$ano_fab = $_POST['ano_fab'];
+$ano_mod = $_POST['ano_mod'];
 $cor = $_POST['cor'];
 $combustivel = $_POST['combustivel'];
 $km = $_POST['km'];
@@ -20,7 +20,7 @@ $observacao = $_POST['obs'];
 try {
     // 2. Preparando a query SQL de inserção
     $sql = "INSERT INTO veiculos (placa, marca, modelo, ano_fabricacao, ano_modelo, cor, combustivel, km, chassi, renavam, cadastro, observacao) 
-            VALUES ('$placa', '$marca', '$modelo', '$ano_fabricacao', '$ano_modelo', '$cor', '$combustivel', '$km', '$chassi', '$renavam', '$cadastro', '$observacao')";
+            VALUES ('$placa', '$marca', '$modelo', $ano_fab, $ano_mod, '$cor', '$combustivel', $km, '$chassi', '$renavam', '$cadastro', '$observacao')";
     
     // 3. Executando a query usando o objeto de conexão
     if ($conexao->query($sql) === TRUE) {

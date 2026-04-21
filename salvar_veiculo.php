@@ -26,7 +26,7 @@ try {
     if ($conexao->query($sql) === TRUE) {
         echo "Veículo cadastrado com sucesso!";
         echo "<p>O veículo de placa <strong>$placa</strong> foi cadastrado na Colonial Veículos.</p>";
-        echo "<br><a href='index.php'>Voltar para o formulário</a>";
+        echo "<br><a href='index.html'>Voltar para a página inicial</a>";
     } else {
         throw new Exception("Erro técnico: " . $conexao->error . " | SQL: " . $sql);
     }

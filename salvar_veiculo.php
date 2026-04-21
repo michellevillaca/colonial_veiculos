@@ -28,7 +28,7 @@ try {
         echo "<p>O veículo de placa <strong>$placa</strong> foi cadastrado na Colonial Veículos.</p>";
         echo "<br><a href='index.php'>Voltar para o formulário</a>";
     } else {
-        throw new Exception("Erro ao cadastrar veículo: " . $conexao->error);
+        throw new Exception("Erro técnico: " . $conexao->error . " | SQL: " . $sql);
     }
 } catch (Exception $erro) {
     // Se ocorrer um erro, exibe na tela a mensagem de erro

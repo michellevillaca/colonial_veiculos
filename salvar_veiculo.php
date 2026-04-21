@@ -19,7 +19,7 @@ $observacao = $_POST['obs'];
 
 try {
     // 2. Preparando a query SQL de inserção
-    $sql = "INSERT INTO veiculos (placa, marca, modelo, ano_fabricacao, ano_modelo, cor, combustivel, km, chassi, renavam, cadastro, observacao) 
+    $sql = "INSERT INTO veiculos (placa, marca, modelo, ano_fab, ano_mod, cor, combustivel, km, chassi, renavam, cadastro, observacao) 
             VALUES ('$placa', '$marca', '$modelo', $ano_fab, $ano_mod, '$cor', '$combustivel', $km, '$chassi', '$renavam', '$cadastro', '$observacao')";
     
     // 3. Executando a query usando o objeto de conexão

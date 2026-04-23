@@ -48,8 +48,7 @@
                     .then(data => {
                         const tabela = document.getElementById('corpo-tabela');
                         data.forEach(veiculo => {
-                            const row = `
-                                <tr>
+                            const linha = `<tr>
                                     <td>${veiculo.id}</td>
                                     <td>${veiculo.placa}</td>
                                     <td>${veiculo.marca} / ${veiculo.modelo}</td>
@@ -63,7 +62,7 @@
                                     <td>${veiculo.obs}</td>
                                 </tr>
                             `;
-                            corpoTabela.innerHTML += row;
+                            corpoTabela.innerHTML += linha;
                         });
                     })
                     .catch(error => console.error('Erro ao carregar dados:', error));

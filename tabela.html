@@ -20,7 +20,7 @@
             <h1>Estoque Atual - Colonial Veículos</h1>
             <a href="cadastro.html" class="btn-voltar">← Voltar ao Cadastro</a>
             <div id="tabela-container">
-                <table id="tabela-veiculos">
+                <table id="corpo-tabela">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -46,7 +46,7 @@
                 fetch('veiculos_json.php')
                     .then(response => response.json())
                     .then(data => {
-                        const tabela = document.getElementById('tabela-veiculos');
+                        const tabela = document.getElementById('corpo-tabela');
                         data.forEach(veiculo => {
                             const row = `
                                 <tr>
@@ -63,7 +63,7 @@
                                     <td>${veiculo.obs}</td>
                                 </tr>
                             `;
-                            tabela.innerHTML += row;
+                            corpoTabela.innerHTML += row;
                         });
                     })
                     .catch(error => console.error('Erro ao carregar dados:', error));

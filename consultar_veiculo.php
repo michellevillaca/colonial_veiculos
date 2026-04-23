@@ -25,7 +25,7 @@ if(isset($_GET['placa_busca'])) {
                 <p><strong>Quilometragem:</strong> " . $veiculo['km'] . "</p>
                 <p><strong>Observações:</strong> " . $veiculo['obs'] . "</p>
                 <br>
-                <a href='cadastro.html' style='text-decoration: none; color: #3498db; font-weight: bold;'>← Nova Consulta</a>
+                <a href='consulta.html' style='text-decoration: none; color: #3498db; font-weight: bold;'>← Nova Consulta</a>
             </div>";
         } else {
             echo "<p style='text-align: center; color: #e74c3c;'>❌ Veículo com placa <strong>$placa</strong> não encontrado no estoque.</p>";

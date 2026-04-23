@@ -19,8 +19,8 @@
         <section class="container">
             <h1>Estoque Atual - Colonial Veículos</h1>
             <a href="cadastro.html" class="btn-voltar">← Voltar ao Cadastro</a>
-            <div id="tabela-container">
-                <table id="corpo-tabela">
+            <div class="tabela-container">
+                <table>
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -36,7 +36,7 @@
                             <th>Observações</th>
                         </tr>
                     </thead>
-                    <tbody id="tabela-veiculos">
+                    <tbody id="corpo-tabela">
                         <!-- Linhas de veículos serão inseridas aqui via JavaScript -->
                     </tbody>
                 </table>
@@ -46,27 +46,31 @@
                 fetch('veiculos_json.php')
                     .then(response => response.json())
                     .then(data => {
-                        const tabela = document.getElementById('corpo-tabela');
-                        data.forEach(veiculo => {
-                            const linha = `<tr>
-                                    <td>${veiculo.id}</td>
-                                    <td>${veiculo.placa}</td>
-                                    <td>${veiculo.marca} / ${veiculo.modelo}</td>
-                                    <td>${veiculo.ano_fab}/ ${veiculo.ano_mod}</td>
-                                    <td>${veiculo.cor}</td>
-                                    <td>${veiculo.combustivel}</td>
-                                    <td>${veiculo.km}</td>
-                                    <td>${veiculo.chassi}</td>
-                                    <td>${veiculo.renavam}</td>
-                                    <td>${veiculo.cadastro}</td>
-                                    <td>${veiculo.obs}</td>
-                                </tr>
-                            `;
-                            corpoTabela.innerHTML += linha;
-                        });
-                    })
-                    .catch(error => console.error('Erro ao carregar dados:', error));
-            </script>
+                // Pegamos o elemento TBODY corretamente
+                const corpoTabela = document.getElementById('corpo-tabela');
+                
+                // Limpamos o conteúdo antes de inserir (boa prática)
+                corpoTabela.innerHTML = "";
+
+                data.forEach(veiculo => {
+                    const linha = `<tr>
+                        <td>${veiculo.id}</td>
+                        <td>${veiculo.placa}</td>
+                        <td>${veiculo.marca} / ${veiculo.modelo}</td>
+                        <td>${veiculo.ano_fab} / ${veiculo.ano_mod}</td>
+                        <td>${veiculo.cor}</td>
+                        <td>${veiculo.combustivel}</td>
+                        <td>${veiculo.km}</td>
+                        <td>${veiculo.chassi}</td>
+                        <td>${veiculo.renavam}</td>
+                        <td>${veiculo.cadastro}</td>
+                        <td>${veiculo.obs}</td>
+                    </tr>`;
+                    corpoTabela.innerHTML += linha;
+                });
+            })
+            .catch(error => console.error('Erro ao carregar dados:', error));
+    </script>
         </section>
     </main>
         <footer>

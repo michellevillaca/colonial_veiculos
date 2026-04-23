@@ -82,9 +82,6 @@ section {
 h1 {
     color: #1a1a1a;
     margin-bottom: 1rem;
-}
-
-h1 {
     font-size: 2.5rem;
 }
 
@@ -117,9 +114,20 @@ button, .btn {
     font-size: 1rem;
 }
 
-button:hover, .btn:hover {
+.btn-voltar { 
+    display: inline-block;
+    margin-bottom: 20px; 
+    padding: 10px;
+    background: #ff6b35;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+button:hover, .btn:hover, .btn-voltar:hover {
     background-color: #e55a28;
 }
+
 
 /* Formulários */
 form {
@@ -156,6 +164,38 @@ input:focus, textarea:focus, select:focus {
     outline: none;
     border-color: #ff6b35;
     box-shadow: 0 0 5px rgba(255, 107, 53, 0.3);
+}
+
+/* Tabela */
+table { 
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+        
+th, td {
+    padding: 8px 4px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+}
+       
+th {
+    background-color: #2c3e50; color: white;
+}
+    
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto; /* Cria a barra de rolagem se a tabela for maior que a tela */
+    margin-top: 20px;
 }
 
 /* Cards */

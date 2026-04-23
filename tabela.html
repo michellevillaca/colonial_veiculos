@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Veículos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <header>
+        <h1>Colonial Veículos</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#" target="_blank" rel="external">Sobre nós</a>
+    <a href="#">Contato</a>
+    </nav>
+    <main>
+        <section class="container">
+            <h1>Estoque Atual - Colonial Veículos</h1>
+            <a href="cadastro.html" class="btn-voltar">← Voltar ao Cadastro</a>
+            <div id="tabela-container">
+                <table id="tabela-veiculos">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Placa</th>
+                            <th>Marca/Modelo</th>
+                            <th>Ano</th>
+                            <th>Cor</th>
+                            <th>Combustível</th>
+                            <th>KM</th>
+                            <th>Chassi</th>
+                            <th>Renavam</th>
+                            <th>Data de Cadastro</th>
+                            <th>Observações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-veiculos">
+                        <!-- Linhas de veículos serão inseridas aqui via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <script>
+                // Função que busca o JSON e preenche a tabela
+                fetch('veiculos_json.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        const tabela = document.getElementById('tabela-veiculos');
+                        data.forEach(veiculo => {
+                            const row = `
+                                <tr>
+                                    <td>${veiculo.id}</td>
+                                    <td>${veiculo.placa}</td>
+                                    <td>${veiculo.marca} / ${veiculo.modelo}</td>
+                                    <td>${veiculo.ano_fab}/ ${veiculo.ano_mod}</td>
+                                    <td>${veiculo.cor}</td>
+                                    <td>${veiculo.combustivel}</td>
+                                    <td>${veiculo.km}</td>
+                                    <td>${veiculo.chassi}</td>
+                                    <td>${veiculo.renavam}</td>
+                                    <td>${veiculo.cadastro}</td>
+                                    <td>${veiculo.obs}</td>
+                                </tr>
+                            `;
+                            tabela.innerHTML += row;
+                        });
+                    })
+                    .catch(error => console.error('Erro ao carregar dados:', error));
+            </script>
+        </section>
+    </main>
+        <footer>
+        Site criado por <a href="https://linktr.ee/michelleandry" target="_blank" rel="external">Michelle Villaça Andry</a> - &copy; 2026 Colonial Veículos
+    </footer>
+</body>
+</html>

@@ -2,7 +2,7 @@
 include_once("conexao.php");
 
 try {
-    $sql = "SELECT * FROM veiculos ORDER BY data_cadastro DESC";
+    $sql = "SELECT * FROM veiculos";
     $resultado = $conexao->query($sql);
     
     $veiculos = [];
